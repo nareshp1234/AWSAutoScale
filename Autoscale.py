@@ -24,7 +24,7 @@ def lambda_handler(event, context):
         print("Enter Arguments to proceed Ex : UP, DOWN ")
         sys.exit()
     myTeamsMessage = pymsteams.connectorcard(
-        "https://outlook.office.com/webhook/6d06df18-3be9-4cde-9c69-90a30ac5044f@b67d722d-aa8a-4777-a169-ebeb7a6a3b67/IncomingWebhook/4abbc6082f7a4bc7883c900ece20cf79/1280749c-f882-4dc1-9d16-cb347c06b414")
+        "<webhookurl>")
     # Let's use Amazon S3
     s3 = boto3.resource('s3')
     # autoscale
@@ -80,7 +80,7 @@ def lambda_handler(event, context):
                 myMessageSection.activityTitle(autoscalename)
                 myMessageSection.activitySubtitle(s.join(changedvalue))
                 myMessageSection.activityImage(
-                    "https://s3.amazonaws.com/scm-testing/GA/Autoscale.png")
+                    "https://s3.amazonaws.com/<bucketname>/Autoscale.png")
                 myMessageSection.activityText("This is my activity Text")
 
                 # Facts are key value pairs displayed in a list.

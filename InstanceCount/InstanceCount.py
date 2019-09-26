@@ -18,7 +18,7 @@ def lambda_handler(event, context):
     ec2_client = boto3.client('ec2')
     # print(groups['AutoScalingGroups'])
     asg_client = boto3.client('autoscaling')
-    asg = "gsd-panda-rq-app-ASGRP-N1SHV5N9YAGW"
+    asg = "Autoscalegroupname"
     print (asg)
     asg_response = asg_client.describe_auto_scaling_groups(AutoScalingGroupNames=[asg])
     # print(asg_response)
